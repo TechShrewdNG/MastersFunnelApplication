@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nnamdi Awurumibe — Candidatura Growth Marketing Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+–bg: #0a0a0a;
+–surface: #111111;
+–border: #1e1e1e;
+–accent: #e8ff47;
+–accent2: #ff4757;
+–text: #f0f0f0;
+–muted: #555;
+–mid: #888;
+–card: #141414;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–bg);
+color: var(–text);
+font-family: ‘DM Mono’, monospace;
+font-size: 14px;
+line-height: 1.7;
+overflow-x: hidden;
+}
+
+/* NOISE OVERLAY */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.75’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘0.04’/%3E%3C/svg%3E”);
+pointer-events: none;
+z-index: 1000;
+opacity: 0.4;
+}
+
+/* LAYOUT */
+.container { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+
+/* HERO */
+.hero {
+padding: 80px 0 60px;
+border-bottom: 1px solid var(–border);
+position: relative;
+}
+
+.hero-tag {
+display: inline-block;
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–accent);
+border: 1px solid var(–accent);
+padding: 4px 12px;
+margin-bottom: 32px;
+animation: fadeUp 0.6s ease both;
+}
+
+.hero-name {
+font-family: ‘Syne’, sans-serif;
+font-size: clamp(42px, 8vw, 72px);
+font-weight: 800;
+line-height: 1;
+letter-spacing: -0.03em;
+color: var(–text);
+animation: fadeUp 0.6s 0.1s ease both;
+}
+
+.hero-name span { color: var(–accent); }
+
+.hero-role {
+font-family: ‘Instrument Serif’, serif;
+font-style: italic;
+font-size: clamp(18px, 3vw, 26px);
+color: var(–mid);
+margin-top: 12px;
+animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-meta {
+display: flex;
+gap: 32px;
+margin-top: 40px;
+flex-wrap: wrap;
+animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.hero-meta-item {
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.hero-meta-label {
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–muted);
+}
+
+.hero-meta-value {
+font-size: 14px;
+color: var(–mid);
+}
+
+/* SECTION */
+section {
+padding: 60px 0;
+border-bottom: 1px solid var(–border);
+animation: fadeUp 0.7s ease both;
+}
+
+.section-label {
+font-size: 10px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 32px;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.section-label::after {
+content: ‘’;
+flex: 1;
+height: 1px;
+background: var(–border);
+}
+
+/* INTRO */
+.intro-text {
+font-family: ‘Syne’, sans-serif;
+font-size: clamp(18px, 2.5vw, 22px);
+font-weight: 600;
+line-height: 1.5;
+color: var(–text);
+margin-bottom: 24px;
+}
+
+.intro-body {
+color: var(–mid);
+line-height: 1.8;
+max-width: 680px;
+}
+
+/* WORK EXAMPLES */
+.work-grid {
+display: grid;
+gap: 2px;
+}
+
+.work-card {
+background: var(–card);
+border: 1px solid var(–border);
+padding: 32px;
+position: relative;
+transition: border-color 0.2s, background 0.2s;
+cursor: default;
+}
+
+.work-card:hover {
+border-color: var(–accent);
+background: #161610;
+}
+
+.work-card-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 16px;
+margin-bottom: 16px;
+flex-wrap: wrap;
+}
+
+.work-card-title {
+font-family: ‘Syne’, sans-serif;
+font-size: 17px;
+font-weight: 700;
+color: var(–text);
+}
+
+.work-card-type {
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–accent2);
+border: 1px solid var(–accent2);
+padding: 3px 10px;
+white-space: nowrap;
+flex-shrink: 0;
+}
+
+.work-card-context {
+font-size: 12px;
+color: var(–muted);
+margin-bottom: 20px;
+font-style: italic;
+}
+
+.work-card-body {
+color: var(–mid);
+line-height: 1.8;
+margin-bottom: 24px;
+}
+
+.results-row {
+display: flex;
+gap: 24px;
+flex-wrap: wrap;
+padding-top: 20px;
+border-top: 1px solid var(–border);
+}
+
+.result-item {
+display: flex;
+flex-direction: column;
+gap: 2px;
+}
+
+.result-number {
+font-family: ‘Syne’, sans-serif;
+font-size: 26px;
+font-weight: 800;
+color: var(–accent);
+line-height: 1;
+}
+
+.result-label {
+font-size: 11px;
+color: var(–muted);
+text-transform: uppercase;
+letter-spacing: 0.08em;
+}
+
+/* STACK */
+.stack-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 2px;
+}
+
+.stack-item {
+background: var(–card);
+border: 1px solid var(–border);
+padding: 16px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: border-color 0.2s;
+}
+
+.stack-item:hover { border-color: #333; }
+
+.stack-name {
+font-size: 13px;
+color: var(–text);
+}
+
+.stack-tag {
+font-size: 9px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–muted);
+}
+
+/* WHY MF */
+.why-block {
+background: var(–card);
+border: 1px solid var(–accent);
+padding: 40px;
+position: relative;
+overflow: hidden;
+}
+
+.why-block::before {
+content: ‘”’;
+font-family: ‘Instrument Serif’, serif;
+font-size: 200px;
+color: var(–accent);
+opacity: 0.06;
+position: absolute;
+top: -40px;
+left: 20px;
+line-height: 1;
+pointer-events: none;
+}
+
+.why-text {
+font-family: ‘Syne’, sans-serif;
+font-size: clamp(17px, 2.5vw, 21px);
+font-weight: 600;
+line-height: 1.6;
+color: var(–text);
+position: relative;
+z-index: 1;
+}
+
+.why-text em {
+color: var(–accent);
+font-style: normal;
+}
+
+/* CTA */
+.cta-section {
+padding: 60px 0 80px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 32px;
+flex-wrap: wrap;
+}
+
+.cta-text {
+font-family: ‘Syne’, sans-serif;
+font-size: 20px;
+font-weight: 700;
+color: var(–text);
+}
+
+.cta-sub {
+font-size: 12px;
+color: var(–muted);
+margin-top: 4px;
+}
+
+.cta-email {
+display: inline-block;
+background: var(–accent);
+color: #000;
+font-family: ‘Syne’, sans-serif;
+font-weight: 700;
+font-size: 13px;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+padding: 14px 28px;
+text-decoration: none;
+transition: opacity 0.2s;
+}
+
+.cta-email:hover { opacity: 0.85; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(20px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* SCROLLED REVEAL */
+.reveal {
+opacity: 0;
+transform: translateY(24px);
+transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* DIVIDER LINE */
+.divider {
+height: 1px;
+background: linear-gradient(90deg, var(–accent) 0%, transparent 100%);
+margin: 0;
+}
+
+@media (max-width: 600px) {
+.container { padding: 0 20px; }
+.work-card { padding: 24px; }
+.why-block { padding: 28px; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+
+  <div class="hero">
+    <div class="hero-tag">Candidatura → Growth Marketing Manager</div>
+    <h1 class="hero-name">Nnamdi<br><span>Awurumibe</span></h1>
+    <p class="hero-role">Full-Stack Performance Marketer. Operador de receita. Não gestor de contas.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Contacto</span>
+        <span class="hero-meta-value">nnamdi912@outlook.com</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Telefone</span>
+        <span class="hero-meta-value">+234 816 590 7113</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Experiência</span>
+        <span class="hero-meta-value">5+ anos em performance marketing</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Disponibilidade</span>
+        <span class="hero-meta-value">Imediata</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+
+  <section class="reveal">
+    <div class="section-label">Percurso</div>
+    <p class="intro-text">Não sou consultor que "recomenda estratégias". Sou o operador que as executa e mede os resultados.</p>
+    <p class="intro-body">
+      Comecei na execução técnica — web performance, tracking, integrações. Depois avancei para gestão de campanhas pagas e estratégia de crescimento. Hoje opero end-to-end: desde a configuração de pixels e CAPI, à construção de funnels, gestão de Meta e Google Ads, dashboards em tempo real e reporting estruturado para founders.<br><br>
+      Trabalhei em agência gerindo múltiplas contas em simultâneo (Loopify 360), in-house a liderar toda a função de marketing digital (Bluechip Technologies), e como consultor de performance para advertisers em mercados emergentes (Meta). Tenho fluência técnica suficiente para debugar tracking sem precisar de "equipa técnica" — e pensamento estratégico suficiente para transformar dados em decisões.<br><br>
+      Uso IA diariamente. Não como gimmick. Como multiplicador de produtividade real.
+    </p>
+  </section>
+
+  <!-- WORK EXAMPLES -->
+
+  <section class="reveal">
+    <div class="section-label">Exemplos de trabalho real</div>
+    <div class="work-grid">
+
+```
+  <div class="work-card">
+    <div class="work-card-header">
+      <div class="work-card-title">Sistema de Funnels Multi-Canal para Portfolio B2B</div>
+      <div class="work-card-type">Performance · Funnel</div>
+    </div>
+    <div class="work-card-context">Loopify 360 — Gestão de 4 contas em simultâneo, verticais distintas</div>
+    <div class="work-card-body">
+      Construí e operei o sistema completo de aquisição para um portfolio de clientes: estrutura de campanhas Google Ads (Search + Display), landing pages em WordPress com tracking server-side, integração CRM via Zapier, e dashboards semanais por cliente. Cada conta tinha reporting estruturado toda segunda-feira com insights accionáveis — não só números. Geri orçamentos directamente, tomei decisões de bidding autónomas e coordenei briefs semanais com copywriters e designers para iterações criativas.
+    </div>
+    <div class="results-row">
+      <div class="result-item">
+        <span class="result-number">+35%</span>
+        <span class="result-label">Tráfego orgânico em 12 meses</span>
+      </div>
+      <div class="result-item">
+        <span class="result-number">−20%</span>
+        <span class="result-label">Custo por aquisição (eficiência geral)</span>
+      </div>
+      <div class="result-item">
+        <span class="result-number">4 contas</span>
+        <span class="result-label">Geridas em simultâneo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-card-header">
+      <div class="work-card-title">Setup de Brand Identity + Performance Loop</div>
+      <div class="work-card-type">Brand · Paid Media · Analytics</div>
+    </div>
+    <div class="work-card-context">Bluechip Technologies — Função de marketing built from scratch</div>
+    <div class="work-card-body">
+      Assumi toda a função de marketing digital de raiz: defini brand guidelines, criei o sistema de tracking (Google Tag Manager + Analytics 4 + pixel Meta com eventos personalizados), construí o calendário de conteúdo e campanhas pagas, e instalei dashboards de performance por canal. Cada campanha tinha KPIs definidos à partida, não só métricas de vaidade. Criei ciclos de feedback — dados → criativo → iteração — que melhoraram o ROI campanha após campanha.
+    </div>
+    <div class="results-row">
+      <div class="result-item">
+        <span class="result-number">0→1</span>
+        <span class="result-label">Função de marketing construída do zero</span>
+      </div>
+      <div class="result-item">
+        <span class="result-number">GA4 + GTM</span>
+        <span class="result-label">Stack de tracking implementada</span>
+      </div>
+      <div class="result-item">
+        <span class="result-number">ROI+</span>
+        <span class="result-label">Melhoria ciclo-a-ciclo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-card-header">
+      <div class="work-card-title">Optimização de Campanhas Pagas + Qualidade de Lead</div>
+      <div class="work-card-type">PPC · Meta Ads · Troubleshooting</div>
+    </div>
+    <div class="work-card-context">Meta (consultoria) — Sub-Saharan Africa advertiser portfolio</div>
+    <div class="work-card-body">
+      Trabalhei directamente com advertisers em mercados de alta volatilidade — orçamentos apertados, audiências difíceis de qualificar, e tracking frequentemente quebrado. Debuguei integrações pixel, corrigi eventos mal configurados, e reestruturei campanhas que estavam a gastar sem converter. O trabalho era hands-on: entrar no Business Manager, identificar o problema, corrigir, e reportar o que foi feito e porquê. Desenvolvi uma capacidade de diagnóstico rápido que hoje aplico directamente em qualquer conta.
+    </div>
+    <div class="results-row">
+      <div class="result-item">
+        <span class="result-number">Pixel + CAPI</span>
+        <span class="result-label">Debug e implementação directa</span>
+      </div>
+      <div class="result-item">
+        <span class="result-number">CTR↑</span>
+        <span class="result-label">Melhoria após reestruturação criativa</span>
+      </div>
+      <div class="result-item">
+        <span class="result-number">Multi-conta</span>
+        <span class="result-label">Gestão simultânea de advertisers</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- STACK -->
+
+  <section class="reveal">
+    <div class="section-label">Stack técnica</div>
+    <div class="stack-grid">
+      <div class="stack-item"><span class="stack-name">Meta Ads Manager</span><span class="stack-tag">Diário</span></div>
+      <div class="stack-item"><span class="stack-name">Google Ads</span><span class="stack-tag">Diário</span></div>
+      <div class="stack-item"><span class="stack-name">Google Analytics 4</span><span class="stack-tag">Diário</span></div>
+      <div class="stack-item"><span class="stack-name">Google Tag Manager</span><span class="stack-tag">Setup + Debug</span></div>
+      <div class="stack-item"><span class="stack-name">Meta CAPI</span><span class="stack-tag">Implementação</span></div>
+      <div class="stack-item"><span class="stack-name">WordPress / Webflow</span><span class="stack-tag">Landing pages</span></div>
+      <div class="stack-item"><span class="stack-name">Zapier / Make</span><span class="stack-tag">Automações</span></div>
+      <div class="stack-item"><span class="stack-name">HTML / CSS</span><span class="stack-tag">Ajustes rápidos</span></div>
+      <div class="stack-item"><span class="stack-name">Looker Studio</span><span class="stack-tag">Dashboards</span></div>
+      <div class="stack-item"><span class="stack-name">Airtable</span><span class="stack-tag">Pipeline + Reporting</span></div>
+      <div class="stack-item"><span class="stack-name">TikTok Ads</span><span class="stack-tag">Experiência</span></div>
+      <div class="stack-item"><span class="stack-name">IA (Claude, GPT, Gemini)</span><span class="stack-tag">Uso diário</span></div>
+    </div>
+  </section>
+
+  <!-- WHY MF -->
+
+  <section class="reveal">
+    <div class="section-label">Porque a Master Funnels</div>
+    <div class="why-block">
+      <p class="why-text">
+        Porque a MF opera exactamente da forma como eu penso sobre marketing: <em>resultados, não relatórios.</em> Skin in the game, não gestão de expectativas. Quero ser o operador de receita de founders com produtos sérios — não o account manager que envia PDFs bonitos sem saber o que está a acontecer nas campanhas. <em>A vossa forma de trabalhar é a razão pela qual eu faço isto.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+
+  <div class="cta-section reveal">
+    <div>
+      <div class="cta-text">Pronto para conversar.</div>
+      <div class="cta-sub">Resposta em menos de 24h garantida.</div>
+    </div>
+    <a href="mailto:nnamdi912@outlook.com?subject=Candidatura%20Growth%20Marketing%20Manager%20—%20Nnamdi%20Awurumibe" class="cta-email">Enviar candidatura →</a>
+  </div>
+
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
